@@ -1,0 +1,386 @@
+:root {
+  --cor0: #000;
+  --cor1: #ffa500;
+  --cor2: #eab821;
+  --cor5: #ffd700;
+  --cor4: #666;
+  --fonte-header: "Contrail One", sans-serif;
+  --fonte-cursiva: "Great Vibes", cursive;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(--cor0, --cor1);
+  color: var(--cor0);
+}
+
+@font-face {
+  font-family: "Aloja";
+  src: url("fonts/aloja-free-font/Aloja-Light.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*-----------------------------------------MENU------------------------------------*/
+header {
+  font-family: var(--fonte-header);
+  position: fixed;
+  background-color: transparent;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2; /* header encima da imagem */
+  width: 100%;
+}
+
+header img {
+  max-width: 150px;
+  height: auto;
+}
+
+nav {
+  margin-left: auto;
+  margin-right: 10%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--cor5);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav ul li a:hover {
+  color: var(--cor1);
+}
+
+section {
+  padding: 70px;
+  text-align: center;
+}
+
+/*-------------------------------------INICIO---------------------------------------*/
+#inicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 20px;
+
+  background-image: url("midia/fundo/header-1400x600.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: white;
+  text-align: start;
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  height: 600px;
+}
+
+#inicio h0 {
+  font-size: 50px;
+  font-family: var(--fonte-cursiva);
+  color: var(--cor2);
+}
+#inicio h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombrinha para*/
+  margin-top: 20px;
+}
+
+#inicio h12 {
+  font-family: "DM Sans", serif;
+}
+
+/*---------------------------------coloquei sobre, mas manquei no link-------------------------------*/
+
+#sobre {
+  padding: 50px;
+  text-align: left;
+}
+
+.sobre-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.sobre-imagem img {
+  max-width: 500px;
+  height: auto;
+  margin-right: 100px;
+}
+
+.sobre-texto h2 {
+  font-family: var(--fonte-cursiva);
+  font-size: 60px;
+  font-weight: bold;
+  color: var(--cor2);
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  font-size: 18px;
+  color: var(--cor4);
+  line-height: 1.5;
+  text-indent: 1em;
+}
+
+/*-------------------------------------Nossos produtos-------------------------------*/
+#produtos {
+  background-color: var(--cor2);
+  padding-bottom: 10%;
+}
+
+#produtos h2 {
+  font-family: var(--fonte-cursiva);
+  font-size: 60px;
+  /*font-weight: bold;*/
+  color: var(--cor0);
+  margin-bottom: 10px;
+  /*text-align: center;*/
+  justify-content: left;
+}
+
+.produtos-nossos {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 70px 20px;
+  height: auto;
+}
+
+.produtos-apreciados,
+.produtos-combos {
+  min-width: calc(40%-20px);
+}
+
+.produtos-apreciados h3,
+.produtos-combos h3 {
+  font-family: var(--fonte-cursiva);
+  color: var(--cor0);
+  margin-right: 60px;
+  font-size: xx-large;
+  align-items: center;
+}
+.p1 {
+  font-family: "DM Sans";
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: auto; /*60px*/
+  margin-left: auto;
+}
+
+/*-----------------------------sessão sobre nós----------------------------------------------*/
+#abaut {
+  background-color: #000;
+  min-height: 400px;
+}
+.nos {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nos1 {
+  flex: 1;
+  min-width: 300px;
+  gap: 20px; /*não está funcionando dar gap entre imagens menores e o texto*/
+  padding: auto; /*piorou padding*/
+}
+
+/*texto*/
+.nos-text {
+  flex: 2;
+  text-align: justify;
+  color: white;
+  background-color: #282828;
+  padding: 20px;
+}
+.nos-text h1 {
+  font-family: "Aloja", sans-serif;
+}
+.nos-text p1 {
+  font-family: "DM Sans";
+  text-indent: 30px;
+}
+
+/*imagens menores*/
+.nos-imgM {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo,
+.bebidas {
+  width: 48.5%;
+  height: auto;
+  object-fit: contain;
+}
+
+/*imagem mairo*/
+.nos-imgX {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nos-imgX img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*---------------------------Localização-------------------------------------*/
+
+#Localizacao {
+  background-color: #000;
+  min-height: 700px;
+}
+
+h2 {
+  color: var(--cor2);
+  font-size: 50px;
+  font-family: var(--fonte-cursiva);
+}
+
+#Localizacao iframe {
+  width: 100%;
+  max-width: 1000px;
+  height: 400px;
+  border: none;
+  filter: grayscale(50%) opacity(80%);
+}
+
+/*---------------------------Portfólio------------------------------------------*/
+#portifolio {
+  background-color: #000;
+  /*background-color: white;*/
+}
+
+.Portfolio h3 {
+  text-align: center;
+  font-size: 40px;
+  font-family: var(--fonte-cursiva);
+  color: var(--cor0);
+  margin-bottom: 20px;
+}
+
+.Portfolio {
+  display: flex;
+  background-color: var(--cor2);
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.port-conteudo {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+.port-esquerda,
+.port-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.port-esquerda img,
+.port-direita img {
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+}
+/*--------------------SESSÃO CONTATO-----------------------------*/
+
+/*-------------------FOOTER-------------------------------------*/
+/* Estilo do Rodapé */
+footer {
+  background-color: var(--cor0);
+  color: var(--cor5);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.rodape {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rodape-logo img {
+  max-width: 150px;
+  margin-bottom: 20px;
+}
+
+.rodape-info {
+  margin-bottom: 20px;
+}
+
+.rodape-info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.rodape-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.rodape-social img {
+  width: 50px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .rodape {
+    padding: 30px 10px;
+  }
+
+  .rodape-info p {
+    font-size: 14px;
+  }
+
+  .rodape-social {
+    gap: 15px;
+  }
+
+  .social-icon img {
+    width: 35px;
+    height: 35px;
+  }
+}
