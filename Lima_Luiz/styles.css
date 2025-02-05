@@ -39,41 +39,48 @@ header {
   z-index: 2; /* header encima da imagem */
   width: 100%;
 }
-/*
+
 header img {
+  margin-left: 2%;
   max-width: 150px;
   height: auto;
 }
-*/
 
 .logo-texto {
   display: flex;
   align-items: center;
-  padding: 8px 40px;
+
+  margin-top: 280px;
+  padding: 8px 0px;
   border-radius: 20px;
   gap: 5px; /* Ajusta o espaçamento entre os textos */
 }
 
 .conveniencia {
   font-family: var(--fonte-header);
-  font-size: 20px; /* Tamanho reduzido */
-  font-weight: 300; /* Texto mais fino */
+  font-size: 24px;
+  font-weight: 300;
   letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.8); /* Tom branco com opacidade */
+  color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
+
+  margin-bottom: 0px;
 }
 
 .lima {
   font-family: var(--fonte-header);
-  font-size: 22px; /* Destaque maior */
-  font-weight: bold; /* Negrito */
-  color: white; /* Cor branca */
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
   text-transform: uppercase;
+
+  margin-top: 24.9px;
+  margin-bottom: 10px;
 }
 
 nav {
   margin-left: auto;
-  margin-right: 10%;
+  margin-right: 3%;
 }
 
 nav ul {
@@ -88,14 +95,14 @@ nav ul li {
   margin: 0 10px;
 }
 
-nav ul li a {
+nav a {
   text-decoration: none;
   color: var(--cor5);
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-nav ul li a:hover {
+nav a:hover {
   color: var(--cor1);
   cursor: pointer;
 }
@@ -116,19 +123,56 @@ nav ul li a.ativo:hover {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.menu-icon {
-  margin-left: auto;
-  margin-right: 10%;
+.menu-toggle {
   display: none;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  right: 20px;
   cursor: pointer;
+  z-index: 1100;
 }
 
-.menu-icon img {
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  border: 1px solid var(--cor1);
-  object-fit: cover;
+/* Cada barrinha será um bloco individual, com largura e altura definidas */
+/* Barrinhas brancas e levemente arredondadas */
+/* Temos uma animação suave para alterações de cor, transformações e opacidade */
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  transition: background-color 0.6s, transform 0.6s, opacity 0.3s;
+}
+
+/* ---- Transformar as barrinhas em "X" translate(x,y) ---- */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 5.5px); /* Ajuste fino para alinhamento */
+}
+
+/* Esconde a linha do meio */
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -5.5px); /* Ajuste fino para alinhamento */
+}
+/* ---- ---- */
+
+/* Muda a cor ao passar o mouse dependendo do estado (ativo/não ativo)*/
+.menu-toggle:not(.active):hover span {
+  background-color: var(--cor0);
+}
+
+.menu-toggle.active:hover span {
+  background-color: #fff;
+}
+
+.menu-toggle.active span {
+  background-color: var(--cor0);
 }
 
 section {
@@ -137,27 +181,35 @@ section {
 }
 
 @media screen and (max-width: 900px) {
-  nav {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    text-align: center;
-    padding: 10px 0;
-  }
-
   nav ul {
+    display: none; /* Esconde o menu por padrão */
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    gap: 20px;
   }
 
-  .menu-icon {
-    display: block;
+  nav ul.active {
+    display: flex; /* Mostra o menu ao ativar */
   }
 
-  nav.active {
-    display: block;
+  nav ul li a {
+    font-size: 1.5rem; /* Ajuste do tamanho da fonte */
+    transition: color 0.3s;
+  }
+
+  nav ul li a:hover {
+    color: var(--cor0); /* Cor ao passar o mouse */
+  }
+
+  .menu-toggle {
+    display: flex;
   }
 }
 
@@ -165,11 +217,10 @@ section {
 #inicio {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 15px 5%;
+  padding: 15px 2%;
   margin: 0;
 
-  background-image: url("midia/fundo/header-2100x1080.jpg");
+  background-image: url("midia/fundo/fundo-teste.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -188,36 +239,53 @@ section {
   width: max-content;
 }
 
+.conteudo > h1 {
+  margin-top: 0px;
+}
+
+.conteudo > h0 {
+  padding-top: 220px;
+}
+
 #inicio h0 {
-  padding-top: 40px;
-  font-size: 70px;
+  display: block;
+  padding-top: 250px;
+  font-size: 130px;
   font-family: var(--fonte-cursiva);
   color: var(--cor2);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
-#inicio h1 {
+#inicio > h1 {
+  left: 20px;
+  bottom: 20px;
   margin-bottom: 10px;
   margin-top: 5px;
-  font-size: 50px;
+  font-size: 22px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 #inicio h12 {
   font-family: "DM Sans", serif;
+  font-size: 29px;
+}
+
+#inicio h0,
+#inicio h12 {
+  margin-left: 40px;
 }
 
 #inicio .logo {
   width: 100%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 #inicio img {
-  max-width: 20vw;
-  min-width: 200px;
+  max-width: 10vw;
+  min-width: 180px;
   display: block;
-  margin: 30px auto 0;
+  margin: 30px 40px 0;
   position: relative;
 }
 
