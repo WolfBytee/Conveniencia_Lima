@@ -289,6 +289,16 @@ section {
   position: relative;
 }
 
+#inicio span {
+  display: block;
+  background-color: var(--cor2);
+
+  margin-left: 42px;
+
+  width: 470px;
+  height: 2px;
+}
+
 @media screen and (max-width: 1430px) {
   #inicio {
     padding: 15px 2%;
@@ -305,7 +315,7 @@ section {
 
 @media screen and (max-width: 1050px) {
   #inicio {
-    background-image: url("midia/fundo/header-1200x620.jpg");
+    background-image: url("midia/fundo/fundo-teste.webp");
   }
 }
 
