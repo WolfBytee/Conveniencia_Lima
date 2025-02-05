@@ -9,6 +9,15 @@
   --fonte-cursiva: "Great Vibes", cursive;
 }
 
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* Impede rolagem lateral */
+}
+
 html {
   scroll-padding-top: 90px; /* Ajuste para a altura do seu menu */
 }
@@ -39,12 +48,34 @@ header {
   justify-content: space-between;
   z-index: 1000; /* header encima da imagem */
   width: 100%;
+  min-height: 60px;
 }
 
 header img {
   margin-left: 2%;
   max-width: 150px;
   height: auto;
+}
+
+header.solid img {
+  display: none;
+}
+
+header.transparent {
+  background: transparent;
+}
+
+header.solid {
+  background: black;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.342);
+}
+
+header .logo-texto-nav {
+  display: none;
+}
+
+header.solid .logo-texto-nav {
+  display: flex;
 }
 
 nav {
@@ -115,6 +146,8 @@ nav ul li a.ativo:hover {
   background-color: var(--cor3);
   border-radius: 2px;
   transition: background-color 0.6s, transform 0.6s, opacity 0.3s;
+
+  box-shadow: 2px 2px 2px #0000002c;
 }
 
 /* ---- Transformar as barrinhas em "X" translate(x,y) ---- */
@@ -148,6 +181,12 @@ nav ul li a.ativo:hover {
 section {
   padding: 70px;
   text-align: center;
+}
+
+@media screen and (max-width: 1080px) {
+  nav ul {
+    gap: 30px;
+  }
 }
 
 @media screen and (max-width: 900px) {
@@ -207,6 +246,7 @@ section {
 }
 
 .conteudo {
+  position: relative;
   width: max-content;
   max-width: 100vw;
 }
@@ -238,6 +278,7 @@ section {
 }
 
 #inicio h12 {
+  display: block;
   font-family: "DM Sans", serif;
   font-size: 29px;
 }
@@ -276,7 +317,7 @@ section {
   display: flex;
   align-items: center;
 
-  margin-top: 280px;
+  margin-top: 320px;
   padding: 8px 0px;
   border-radius: 20px;
   gap: 5px; /* Ajusta o espaçamento entre os textos */
@@ -284,7 +325,7 @@ section {
 
 .conveniencia {
   font-family: var(--fonte-header);
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 300;
   letter-spacing: 1px;
   color: rgba(255, 255, 255, 0.8);
@@ -295,13 +336,13 @@ section {
 
 .lima {
   font-family: var(--fonte-header);
-  font-size: 30px;
+  font-size: 33px;
   font-weight: bold;
   color: white;
   text-transform: uppercase;
 
-  margin-top: 24.9px;
-  margin-bottom: 10px;
+  margin-top: 16px;
+  margin-bottom: 0px;
 }
 
 @media screen and (max-width: 1430px) {
@@ -313,42 +354,38 @@ section {
     font-size: 60px;
   }
 
-  #inicio h1 {
+  #inicio h1.lima {
     font-size: 36px;
+  }
+
+  .logo-texto {
+    margin-top: 400px;
   }
 }
 
-@media screen and (max-width: 540px) {
-  #inicio {
-    text-align: center;
-    background-image: url("midia/fundo/header2-600x1000.webp");
-  }
-
+@media screen and (max-width: 810px) {
   #inicio h0 {
     display: block;
     padding-top: 150px;
-    font-size: 75px;
+    font-size: 70px;
     font-family: var(--fonte-cursiva);
     color: var(--cor2);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
-  #inicio h0,
-  #inicio h12,
-  #inicio span {
-    margin-left: 0px;
-    margin-right: 5px;
-  }
-
   #inicio h1 {
-    font-size: 29px;
-    padding-left: 15px;
+    font-size: 25px;
+    padding-left: 8px;
     text-align: left;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.438);
   }
 
+  .lima {
+    margin-top: 14.9px;
+  }
+
   #inicio .logo {
-    position: absolute;
+    position: relative;
     bottom: 10px;
     left: 10px;
     width: 80px; /* Ajuste o tamanho */
@@ -358,8 +395,9 @@ section {
     max-width: 80px;
   }
 
-  #inicio span {
-    margin: 0 auto;
+  .conteudo {
+    max-width: calc(100vw - 2%);
+    padding-right: 2%;
   }
 
   .conteudo > h1 {
@@ -368,17 +406,35 @@ section {
   }
 
   .logo-texto {
-    padding-left: 15px;
+    margin-top: 450px;
+    padding-left: 8px;
     padding-bottom: 0px;
   }
 
   .lima {
-    padding-left: 5px;
+    padding-left: 0px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.425);
+    margin-bottom: 0;
   }
 
   .conveniencia {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.466);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #inicio {
+    text-align: center;
+    background-image: url("midia/fundo/header2-600x1000.webp");
+  }
+
+  #inicio h0,
+  #inicio h12 {
+    margin: 0 auto;
+  }
+
+  #inicio span {
+    margin: 0 auto;
   }
 }
 
@@ -416,7 +472,7 @@ section {
   text-indent: 1em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
   .sobre-container {
     flex-direction: column;
     text-align: center;
@@ -429,6 +485,14 @@ section {
 
   .sobre-texto {
     max-width: 100%;
+  }
+
+  .sobre-texto h2 {
+    font-size: 80px;
+  }
+
+  .sobre-texto p {
+    font-size: 20px;
   }
 }
 
@@ -455,11 +519,13 @@ section {
   flex-wrap: wrap;
   padding: 70px 20px;
   height: auto;
+  margin-bottom: -400px;
+  gap: 50px;
 }
 
 .produtos-apreciados,
 .produtos-combos {
-  min-width: calc(40%-20px);
+  min-width: calc(50%-20px);
 }
 
 .produtos-apreciados h3,
@@ -480,68 +546,74 @@ section {
   margin-left: auto;
 }
 
+@media screen and (max-width: 1450px) {
+  .produtos-nossos {
+    margin-bottom: -100px;
+  }
+}
+
+@media screen and (max-width: 912px) {
+  #produtos img {
+    display: none;
+  }
+
+  .produtos-combos {
+    margin-bottom: 80px;
+  }
+}
+
 /*-----------------------------sessão sobre nós----------------------------------------------*/
-#abaut {
+#about {
   background-color: #000;
   min-height: 400px;
-}
-.nos {
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Texto ocupa 2 frações, imagem grande 1 fração */
   gap: 20px;
+  padding: 20px;
+  align-items: center;
 }
 
-.nos1 {
-  flex: 1;
-  min-width: 300px;
-  gap: 20px; /*não está funcionando dar gap entre imagens menores e o texto*/
-  padding: auto; /*piorou padding*/
-}
-
-/*texto*/
+/* Texto principal */
 .nos-text {
-  flex: 2;
-  text-align: justify;
   color: white;
   background-color: #282828;
   padding: 20px;
+  text-align: justify;
 }
+
 .nos-text h1 {
   font-family: "Aloja", sans-serif;
 }
-.nos-text p1 {
+
+.nos-text p {
   font-family: "DM Sans";
   text-indent: 30px;
 }
 
-/*imagens menores*/
-.nos-imgM {
+/* Imagem grande */
+.nos-imgX {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+}
+
+.nos-imgX img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Container para imagens menores */
+.nos1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colunas iguais */
+  gap: 20px; /* Agora o espaçamento funciona */
 }
 
 .logo,
 .bebidas {
-  width: 48.5%;
+  width: 100%;
   height: auto;
   object-fit: contain;
-}
-
-/*imagem mairo*/
-.nos-imgX {
-  flex: 1;
-  min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.nos-imgX img {
-  max-width: 100%;
-  height: auto;
 }
 
 /*---------------------------Localização-------------------------------------*/
@@ -551,10 +623,23 @@ section {
   min-height: 700px;
 }
 
-h2 {
+#Localizacao h1 {
   color: var(--cor2);
   font-size: 50px;
   font-family: var(--fonte-cursiva);
+  margin-bottom: 0;
+}
+
+#Localizacao h2 {
+  color: var(--cor5);
+  font-size: 20px;
+  font-weight: lighter;
+  font-family: var(--fonte-header);
+  margin-top: 0;
+}
+
+#Localizacao address {
+  display: block;
 }
 
 #Localizacao iframe {
@@ -617,8 +702,6 @@ h2 {
 footer {
   background-color: var(--cor0);
   color: var(--cor4);
-  padding: 50px 20px;
-  text-align: center;
 }
 
 .rodape {
@@ -630,11 +713,10 @@ footer {
 
 .rodape-logo img {
   max-width: 150px;
-  margin-bottom: 20px;
 }
 
 .rodape-info {
-  margin-bottom: 20px;
+  margin: 5px auto;
 }
 
 .rodape-info p {
@@ -649,25 +731,6 @@ footer {
 }
 
 .rodape-social img {
-  width: 50px;
+  width: 20px;
   height: auto;
-}
-
-@media (max-width: 768px) {
-  .rodape {
-    padding: 30px 10px;
-  }
-
-  .rodape-info p {
-    font-size: 14px;
-  }
-
-  .rodape-social {
-    gap: 15px;
-  }
-
-  .social-icon img {
-    width: 35px;
-    height: 35px;
-  }
 }

@@ -37,6 +37,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector("header");
+  const inicioSection = document.querySelector("#inicio");
+
+  function checkScroll() {
+    const inicioBounds = inicioSection.getBoundingClientRect();
+    if (inicioBounds.bottom > 50) {
+      header.classList.add("transparent");
+      header.classList.remove("solid");
+    } else {
+      header.classList.add("solid");
+      header.classList.remove("transparent");
+    }
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  checkScroll(); // Chama ao carregar a página
+});
+
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
