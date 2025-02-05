@@ -463,6 +463,7 @@ section {
   font-weight: bold;
   color: var(--cor2);
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .sobre-texto p {
