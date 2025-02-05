@@ -25,6 +25,18 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", changeActiveSection);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menu-toggle");
+  const menu = document.querySelector(".menu");
+  const nav = document.querySelector("nav");
+
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+    menuToggle.classList.toggle("active");
+    nav.classList.toggle("active");
+  });
+});
+
 const menuToggle = document.getElementById("menu-toggle");
 const menu = document.querySelector(".menu");
 const nav = document.querySelector("nav");
