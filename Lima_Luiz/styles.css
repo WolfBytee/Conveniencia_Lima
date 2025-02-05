@@ -281,6 +281,7 @@ section {
   display: block;
   font-family: "DM Sans", serif;
   font-size: 29px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.418);
 }
 
 #inicio h0,
