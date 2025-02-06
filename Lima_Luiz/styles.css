@@ -280,7 +280,7 @@ section {
   display: block;
   font-family: "DM Sans", serif;
   font-size: 1.8em;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.418);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.418);
 }
 
 #inicio h0,
@@ -439,6 +439,7 @@ section {
 #sobre {
   padding: 50px;
   text-align: left;
+  box-shadow: 2px 2px 4px white;
 }
 
 .sobre-container {
@@ -495,7 +496,10 @@ section {
 
 /*-------------------------------------Nossos produtos-------------------------------*/
 #produtos {
-  background-color: var(--cor2);
+  background-image: url("midia/fundo/nossos-produtos-FULL.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding-bottom: 10%;
 }
 
@@ -503,7 +507,7 @@ section {
   font-family: var(--fonte-cursiva);
   font-size: 60px;
   /*font-weight: bold;*/
-  color: var(--cor0);
+  color: var(--cor2);
   margin-bottom: 10px;
   /*text-align: center;*/
   justify-content: left;
@@ -516,26 +520,27 @@ section {
   flex-wrap: wrap;
   padding: 70px 20px;
   height: auto;
-  margin-bottom: -400px;
   gap: 50px;
 }
 
 .produtos-apreciados,
 .produtos-combos {
+  color: var(--cor2);
   min-width: calc(50%-20px);
 }
 
 .produtos-apreciados h3,
 .produtos-combos h3 {
   font-family: var(--fonte-cursiva);
-  color: var(--cor0);
-  margin-right: 60px;
+  color: var(--cor2);
+  margin-right: 80px;
   font-size: xx-large;
   align-items: center;
+  font-size: 50px;
 }
 .p1 {
   font-family: "DM Sans";
-  font-size: 20px;
+  font-size: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -694,32 +699,32 @@ section {
 }
 /*--------------------SESSÃO CONTATO-----------------------------*/
 
-.title_contato{
+.title_contato {
   font-size: 30px;
   padding-bottom: 30px;
   margin-top: 1px;
 }
 
-.paragrafo_contato{
+.paragrafo_contato {
   text-align: center;
 }
 
-.logo_contato{
+.logo_contato {
   max-width: 18px;
   margin-top: 20px;
 }
 
-.link_contato{
-  color: #000 ;
+.link_contato {
+  color: #000;
   font-size: 18px;
   text-decoration: none;
 }
 
-.link_contato:hover{
+.link_contato:hover {
   background-color: #eab821;
   border-radius: 20px;
   padding: 5px;
-  color: #000 ;
+  color: #000;
 }
 
 /*-------------------FOOTER-------------------------------------*/
