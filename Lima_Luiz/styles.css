@@ -280,7 +280,7 @@ section {
   display: block;
   font-family: "DM Sans", serif;
   font-size: 1.8em;
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.818);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 #inicio h0,
@@ -730,8 +730,8 @@ section {
 /*-------------------FOOTER-------------------------------------*/
 /* Estilo do Rodapé */
 footer {
-  background-color: var(--cor0);
-  color: var(--cor4);
+  background-color: white;
+  color: rgba(0, 0, 0, 0.756);
 }
 
 .rodape {
