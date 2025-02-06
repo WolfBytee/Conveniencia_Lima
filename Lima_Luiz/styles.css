@@ -697,6 +697,34 @@ section {
 }
 /*--------------------SESSÃO CONTATO-----------------------------*/
 
+.title_contato{
+  font-size: 30px;
+  padding-bottom: 30px;
+  margin-top: 1px;
+}
+
+.paragrafo_contato{
+  text-align: center;
+}
+
+.logo_contato{
+  max-width: 18px;
+  margin-top: 20px;
+}
+
+.link_contato{
+  color: #000 ;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.link_contato:hover{
+  background-color: #eab821;
+  border-radius: 20px;
+  padding: 5px;
+  color: #000 ;
+}
+
 /*-------------------FOOTER-------------------------------------*/
 /* Estilo do Rodapé */
 footer {
