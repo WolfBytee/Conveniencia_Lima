@@ -280,7 +280,7 @@ section {
   display: block;
   font-family: "DM Sans", serif;
   font-size: 1.8em;
-  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.418);
+  text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.818);
 }
 
 #inicio h0,
@@ -314,7 +314,7 @@ section {
 }
 
 .logo-texto {
-  display: flex;
+  display: none; /*flex;*/
   align-items: center;
 
   margin-top: 16.8vh;
